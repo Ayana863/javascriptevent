@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    input[type="number"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 80px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .table-output {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Multiplication Table Generator</h2>
+  <input type="number" id="numberInput" placeholder="Enter a number">
+  <button onclick="generateTable()">Generate Table</button>
+  <div id="tableOutput" class="table-output"></div>
+</div>
+
+<script>
+  function generateTable() {
+    var number = document.getElementById("numberInput").value;
+    var output = "";
+    if (number) {
+      for (var i = 1; i <= 10; i++) {
+        output += number + " x " + i + " = " + (number * i) + "<br>";
+      }
+    } else {
+      output = "Please enter a valid number.";
+    }
+    document.getElementById("tableOutput").innerHTML = output;
+  }
+</script>
+
+</body>
+</html>
